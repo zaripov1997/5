@@ -1,0 +1,65 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+ <p style="color:black; text-align: center; font-size:35px; font-family:fantasy; color:maroon" >!!! Скидки !!!!<br />
+     <ul style="color:black; font-size:20px; font-family:'Ink Free'" > Действуют скидки, в зависимости от дня недели:<br />
+      <li<span>&#10004;</span>ПН, ВТ - 20% на все корма;</li><br /> <img src="static/app/content/gif3.gif" class="rightimg" />
+      <li<span>&#10004;</span>СР, ЧТ - 10% на все аксессуары;</li> <br />
+      <li<span>&#10004;</span>ПТ, СБ, ВС - 10% на все товары.</li><br /> 
+    </ul>
+    <ul1 style="color:black;font-size:20px; font-family:'Ink Free'  "> А также сейчас действуют персональные скидки по некоторым категориям товаров:
+      <li><span>&#10071;</span>2 по цене 1: действует на кошачьи корма и лакомства (при покупке от 10 штук);</li>
+      <li><span>&#10071;</span>1+1=3: действует на все лакомства для собак;</li>
+      <li><span>&#10071;</span>скидка 20% при покупке от 15 штук: действует на все игрушки для животных.</li>
+    </ul1>
+   *Скидки не суммируются! Т.е. не зависят от дня недели.
+</p>
+
+
+<div id="myCarousel"  class="carousel slide" data-ride="carousel" data-interval="5000">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div   class="carousel-inner" role="listbox">
+      <div class="item active">
+        <a class="btn btn-default" href="http://porcelan-food.ru/produkty/sukhie-korma/porcelan-dlja-sobak/" target="_blank">
+            <img src="{% static 'app/content/4565.jpg'%} " alt="Первый слайд" class="img-responsive" />
+        
+          <div class="carousel-caption" role="option">
+                <p>
+                </p>
+          </div>
+        </a>
+      </div>
+        <div class="item">
+         <a class="btn btn-default" href="https://www.propartner.ru/tags/korm-vernye-druzya?yclid=6628029471021914782&utm_campaign=%7Bdirect%7D" target="_blank">
+            <img src="{% static 'app/content/banner2.jpg'%}" alt="Второй слайд"  class="img-responsive" />
+          <div class="carousel-caption" role="option">
+                <p>
+                </p>
+          </div>
+          </a>
+        </div>
+        <div class="item">
+         <a class="btn btn-default" href="https://diusapet.com/alleva/" target="_blank">
+            <img src=" {% static 'app/content/20.jpeg'%} " alt="Третий слайд"  class="img-responsive" />
+          <div class="carousel-caption" role="option">
+                <p>
+                </p>
+          </div>
+         </a>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Назад</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Дальше</span>
+    </a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+﻿{% extends "app/layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="anketa_1">
+    <div class="item_3">
+        <img width="250" height="300" align="left" src="{% if product.image %}{{ product.image.url }}{% else %}{% static "media/no_image.png" %}{% endif %}">
+        <h1>{{ product.name }}</h1>
+        <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
+        <p style="font-family:serif;font-size:medium; color:maroon;" class="price"><b>Цена: {{ product.price }} ₽</p></b>
+        <p2>{{ product.description|linebreaks }}</p2>
+        <hr>
+    </div>
+{% if not user.is_superuser and not user.is_staff %}
+  {% if user.is_authenticated %}
+    
+    <form action="{% url "cart:cart_add" product.id %}" method="post">
+    {{ cart_product_form }}
+    {{ item.quantity }}
+    {% csrf_token %}
+    <input type="submit" value="Поместить в корзину">
+    </form>
+   
+   {% else %}
+    <h3 style="font-size:medium; color:maroon"><b><ins> Для добавления товара в корзину, пожалуйста, <a href="{% url 'login' %}">войдите в аккаунт</a> или <a href="{% url 'registration'%}">зарегистрируйтесь.</a></ins></b></h3>
+  {% endif %}
+    {% else %}
+     <h3 style="font-size:medium; color:maroon"><b><ins> Вы являетесь администратором или менеджером.</ins></b></h3>
+{% endif %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+﻿{% extends "app/layout.html" %}
+{% block content %}
+<h2 style=" font-family:fantasy; text-align:center">{{ title }}</h2> 
+{% for post in posts %}
+
+
+<hr class="hr-vertical-gradient">
+
+<div class="">
+<h2> {{post.title}} </h2>
+<h4> {{post.posted}} </h4>
+<p> {{post.description}} </p>
+<p><a href="{% url 'blogpost' parametr=post.id %}"> Читать далее ⮚</a> </p>
+</div>
+
+{% endfor %}
+ <style>
+.hr-vertical-gradient {
+	margin: 20px 0;
+	padding: 0;
+	height: 7px;
+	border: none;
+	background: linear-gradient(180deg, NavajoWhite, indigo);
+}
+</style>
+
+{% endblock %}
+
+
+ 

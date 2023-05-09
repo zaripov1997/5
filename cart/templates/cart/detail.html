@@ -1,0 +1,60 @@
+﻿{% extends "app/layout.html" %}
+{% load static %}
+{% block title %}
+    Корзина
+{% endblock %}
+{% block content %}
+<div class="anketa_1">
+    <h1 style="text-align:center;font-family:fantasy">Товары в корзине</h1>
+    <table class="cart">
+        <thead>
+        <tr>
+            <th>Изображение</th>
+            <th>Товар</th>
+            <th>Количество</th>
+            <th>Убрать</th>
+            <th>Цена товара</th>
+            <th>ИТОГО</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in cart %}
+            {% with product=item.product %}
+                <tr>
+                    <td>
+                        <a href="{{ product.get_absolute_url }}">
+                            <img style="width:120px; height:130px"
+                                 src="
+                              
+                                {% if product.image %}
+                                    {{ product.image.url }}
+                                {% else %}
+                                    {% static "img/no_image.png" %}
+                                {% endif %}">
+                        </a>
+                    </td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td><a href="{% url "cart:cart_remove" product.id%}">✓</a></td>
+                    <td class="num">{{ item.price }} ₽</td>
+                    <td class="num">{{ item.total_price }} ₽</td>
+                </tr>
+            {% endwith %}
+        {% endfor %}
+        <tr class="total">
+            <td>ИТОГО</td>
+            <td colspan="4"></td>
+            <td class="num" style="color:brown; font-size:18px">{{ cart.get_total_price }} ₽</td>
+        </tr>
+        </tbody>
+    </table>
+    <p class="text-right">
+	 <a href="{% url "product_list" %}" class="button blue">
+         <i>Продолжить покупки</i>
+	 </a>
+	 <a href="{% url "orders:order_create" %}" class="button purple">
+         <i>Купить</i>
+	 </a>
+    </p>
+</div>
+{% endblock %}

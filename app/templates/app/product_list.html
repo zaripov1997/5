@@ -1,0 +1,45 @@
+﻿{% extends "app/layout.html" %}
+{% load static %}
+
+{% block title %}
+    {% if category %}{{ category.name }}{% else %}Products{% endif %}
+{% endblock %}
+
+{% block content %}
+  <div class="container content">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="list-group">
+                <p class="list-group-item"; style="font-size:30px; font-family:fantasy"><b>Категории</b></p>
+                {% if not category %}{% endif %}
+                <a href="{% url "product_list" %}"; class="list-group-item">Все</a>          
+                {% for c in categories %}
+                <a {% if category.slug == c.slug %}{% endif %}></a>
+                <a href="{{ c.get_absolute_url }}"; class="list-group-item" >{{ c.name }}</a>         
+                {% endfor %}
+            </div>
+        </div>
+		<div class="col-md-8 products">
+            <div class="row">
+                {% for product in products %}
+                <div class="col-sm-4">
+                   
+                        <div class="product">                        
+                          <div class="product-img">
+                             <img  src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %} {% endif %}" width="170" height="170">                                
+                          </div>                            
+                          <a href="{{ product.get_absolute_url}}"></a>
+                          <p class="product-title">
+                             <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+                          </p>
+                          <p class="product-price"; style="font-variant:small-caps; font-size:20px"><b>Цена: {{ product.price }} ₽</p></b>       
+                        </div>
+                                         
+                </div>
+                {% endfor %} 
+            </div>
+        </div>
+    </div>
+  </div>
+
+{% endblock %}

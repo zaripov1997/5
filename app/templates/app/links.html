@@ -1,0 +1,14 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+<h2 style=" font-family:fantasy; text-align:center">{{ title }}.</h2>
+<h3 style=" font-family:'Times New Roman', Times, serif">{{ message }}</h3>
+<a href ="https://ilike.pet/ru/pets/" target="_blank"> <img src="{% static 'app/content/2.jpg' %}" alt="Logo 1"/></a>
+<p style="font-size:20px; color:maroon; font-family:fantasy">Сайт на котором можно посмотреть различные виды домашних животных.</p>
+<a href ="https://www.petshop.ru/" target="_blank"> <img src="{% static 'app/content/1.jpg' %}" alt="Logo 1"/></a>
+<p style=" font-size:20px; color:darkorange; font-family:fantasy">Сайт с обзором товаров для животных.</p>
+<a href ="https://zoopskov.ru/" target="_blank"> <img src="{% static 'app/content/3.jpg' %}" alt="Logo 1"/></a>
+<p style=" font-size:20px; color:darkgreen; font-family:fantasy">Сайт на котором можно посмотреть различные питомники для собак и кошек.</p>
+{% endblock %}

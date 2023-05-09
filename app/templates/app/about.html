@@ -1,0 +1,29 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+
+<div style="text-align:center">
+    <p1 style="font-size:25px; color:darkgreen; width:15px"> Вас приветствует интернет магазин зоотоваров "Любимые Лапки".</p1><br><br />
+</div> 
+    <img align="left" hspace="18" vspace="10" src="{% static 'app/content/150.jpg' %}" alt="Животные" width="500" height="400"  /><br />
+<div style="font-size:16px; font-family:'Times New Roman', Times, serif; color:indigo">    
+    <p4>Онлайн-зоомагазин, как и обычный магазин должен обладать удобством поиска нужного Вам товара.
+    Наш большой зоомагазин, несмотря на широкий ассортимент, приятно удивит Вас простотой пользования сайтом и поиска товара. 
+    Подробное описание и наличие фотографий позволят Вам составить полное представление о товаре.
+    Все товары удобно сгруппированы и могут быть отобраны по различным свойствам благодаря действующей системе фильтров. 
+    </p4>
+</div><br />
+<div style="font-size:16px; color:maroon; font-family:'Times New Roman', Times, serif">
+    <ul2> В нашем магазине вы можете приобрести:
+        <li><span>&#10008;</span>Корма для разных видов животных:от самых маленьких до самых больших</li>
+        <li><span>&#10008;</span>Аксессуары для собак и кошек</li> <img src="static/app/content/gif.gif" class="rightimg" />
+        <li><span>&#10008;</span>Различные виды домиков и клеток для Ваших милых питомцев</li>
+        <li><span>&#10008;</span>Витаминки для поддержания иммунитета Вашего "друга"</li>
+        <li><span>&#10008;</span>И многое другое!</li>
+    </ul2>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,104 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+
+{% if form != None %}
+   <br><h2 style=" font-family:fantasy; text-align:center">Пожалуйста пройдите опрос</h2><br>
+    <div>
+        <form method="POST">
+        {% csrf_token %}
+        <label for="{{ form.name.id_for_label }}">{{ form.name.label }}:</label>
+        {{ form.name }} <br>
+        <label for="{{ form.city.id_for_label }}">{{ form.city.label }}:</label>
+        {{ form.city }} <br>
+        <label for="{{ form.ok.id_for_label }}">{{ form.ok.label }}:</label>
+        {{ form.ok }} <br>
+        <label for="{{ form.gender.id_for_label }}">{{ form.gender.label }}:</label>
+        {{ form.gender }}
+        <label for="{{ form.internet.id_for_label }}">{{ form.internet.label }}:</label>
+        {{ form.internet }} <br>
+        <label for="{{ form.notice.id_for_label }}">{{ form.notice.label }}:</label>
+        {{ form.notice }} <br>
+        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
+        {{ form.email }} <br>
+        <label for="{{ form.message.id_for_label }}">{{ form.message.label }}:</label>
+        {{ form.message }} <br>
+        <input type="submit" value="Отправить" id="in">
+        </form>
+    </div>
+{% else %}
+    <br><h2 style="font-family:fantasy">!!! Благодарим за ваш ответ !!!</h2>
+    <h3>Вы сообщили нам следующую информацию:</h3>
+    <ul>
+        <li><span>Имя:</span> {{ data.name }}</li>
+        <li><span>Город:</span> {{ data.city }}</li>
+        <li><span>Понравился ли вам наш сайт:</span> {{ data.ok }}</li>
+        <li><span>Количество животных:</span> {{ data.gender }}</li>
+        <li><span>Животные:</span> {{ data.internet }}</li>
+        <li><span>Получать новости с сайта:</span> 
+               {{ data.notice }}
+         </li>
+        <li><span>Ваш email:</span> {{ data.email }}</li>
+        <li><span>Ваши пожелания и вопросы:</span> {{ data.message }}</li>
+    </ul>
+{% endif %}
+<script>
+
+function in_mouseover()
+   {
+        $('#in').css('background-color', 'MediumSlateBlue')
+   }
+    $('#in').mouseover(in_mouseover);
+function in_mouseout()
+   {
+        $('#in').css('background-color', 'white')
+   }
+    $('#in').mouseout(in_mouseout);
+
+function name_focus()
+   {
+        $('#id_name').css('background-color', 'LightSkyBlue')
+   }
+    $('#id_name').focus(name_focus);
+function name_blur()
+   {
+        $('#id_name').css('background-color', 'white')
+   }
+    $('#id_name').blur(name_blur);
+
+function city_focus()
+   {
+        $('#id_city').css('background-color', 'LightSkyBlue')
+   }
+    $('#id_city').focus(city_focus);
+function city_blur()
+   {
+        $('#id_city').css('background-color', 'white')
+   }
+    $('#id_city').blur(city_blur);
+
+function email_focus()
+   {
+        $('#id_email').css('background-color', 'LightSkyBlue')
+   }
+    $('#id_email').focus(email_focus);
+function email_blur()
+   {
+        $('#id_email').css('background-color', 'white')
+   }
+    $('#id_email').blur(email_blur);
+
+function message_focus()
+   {
+        $('#id_message').css('background-color', 'LightSkyBlue')
+   }
+    $('#id_message').focus(message_focus);
+function message_blur()
+   {
+        $('#id_message').css('background-color', 'white')
+   }
+    $('#id_message').blur(message_blur);
+
+</script>
+{% endblock %}

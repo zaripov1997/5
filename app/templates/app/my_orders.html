@@ -1,0 +1,37 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+
+
+<h2 style="font-family:fantasy; text-align: center">Ваши заказы</h2>
+
+{% for item in product_ordered %}
+ <p style="font-size: 20px"><b><ins>Номер заказа: {{item.order_id}} </ins></b></p> 
+  {% with product=item.product %}
+    
+  <p style="font-size: 17px ; color:darkblue"><b>Наименование продуктов: {{product.name}}</b></p>
+  <p style="font-family:serif;font-size:17px; color:maroon"> <b>Цена: {{item.price}}</b></p>
+  <p style="font-size: 17px ; color:indigo"><b>Количество: {{item.quantity}}</b></p>
+  
+<hr class="hr020">
+ {% endwith %}      
+ <br/>
+
+{% endfor%}
+
+
+<style>
+.hr020 {
+border: 0;
+height: 1px;
+background: #000;
+background-image: -webkit-linear-gradient(left, #fff, #000, #fff);
+background-image: -moz-linear-gradient(left, #fff, #000, #fff);
+background-image: -ms-linear-gradient(left, #fff, #000, #fff);
+background-image: -o-linear-gradient(left, #fff, #000, #fff);
+}
+</style>
+
+
+{% endblock %}

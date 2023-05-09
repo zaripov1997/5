@@ -1,0 +1,149 @@
+body {
+	padding-top: 70px;
+	padding-bottom: 30px;
+	color: black;
+	background-image: url('/static/app/content/123456.jpg');
+	background-size: 100%;
+	background-attachment: fixed;
+}
+
+
+.rightimg {
+	float: right; /* Выравнивание по правому краю  */
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+.content {
+	margin-top: 50px;
+}
+
+.product {
+	background: #fff none repeat scroll 0 0;
+	border: 1px solid #c0c0c0;
+	height: 390px;
+	overflow: hidden;
+	padding: 25px 15px;
+	position: relative;
+	text-align: center;
+	transition: all 0.5s ease 0s;
+	margin-bottom: 20px;
+}
+.product:hover {
+		box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+}
+
+.product-img {
+	height: 200px;
+}
+
+.product-title a {
+	color:darkblue;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.product-title a:hover,
+.product-title a:focus {
+		color: darkgreen;
+		text-decoration: underline;
+}
+
+
+.product-price {
+		bottom: 15px;
+		left: 0;
+		position: absolute;
+		width: 100%;
+		color: #d51e08;
+		font-size: 18px;
+		font-weight: 500;
+	}
+p1{
+    color: Indigo;
+    font-family: fantasy;
+    text-align: center;
+}
+
+p2 {
+	font-family: serif;
+	color: black;
+	font-size: 16px;
+}
+
+TD, TH {
+	border: 1px solid black; /* Рамка вокруг ячеек */
+	text-align: center; /*выравнивание по середине*/
+	border: 1px solid #fff;
+	padding: 5px; /* Поля вокруг текста */
+	font-family: monospace;
+	font-size: 16px
+}
+
+table {
+	width: 100%;
+	background: linear-gradient(0deg, rgba(158,241,251,1) 0%, rgba(78,177,237,1) 48%, rgba(171,134,227,1) 100%);
+	border: 3px double #000;
+}
+
+
+.left {
+	float: left;
+	margin: 0 1em 1em 0;
+}
+hr1 {
+	border: none; /* Убираем границу для браузера Firefox */
+	color: black; /* Цвет линии для остальных браузеров */
+	background-color: black; /* Цвет линии для браузера Firefox и Opera */
+	height: 1px;
+}
+
+hr2 {
+	border: none; /* Убираем границу для браузера Firefox */
+	color: black; /* Цвет линии для остальных браузеров */
+	background-color: black; /* Цвет линии для браузера Firefox и Opera */
+	height: 1px;
+}
+ul1, ul2 {
+	list-style: none;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}

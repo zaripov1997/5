@@ -1,0 +1,4 @@
+G:\веб-программирование\4\DjangoWebProject1\DjangoWebProject1\obj\Debug\DjangoWebProject1.pyproj.CoreCompileInputs.cache
+F:\веб-программирование\4\DjangoWebProject1\DjangoWebProject1\obj\Debug\DjangoWebProject1.pyproj.CoreCompileInputs.cache
+D:\веб-программирование\4\DjangoWebProject1\DjangoWebProject1\obj\Debug\DjangoWebProject1.pyproj.CoreCompileInputs.cache
+C:\Users\annav\Desktop\4\DjangoWebProject1\DjangoWebProject1\obj\Debug\DjangoWebProject1.pyproj.CoreCompileInputs.cache
